@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     search: {
         position: 'relative',
         marginLeft: 0,
+        display: "grid"
     },
     searchIcon: {
         padding: theme.spacing(0, 2),
@@ -137,10 +138,10 @@ const Home: React.FC<Props> = (props) => {
                 direction="row"
                 justify="flex-start"
                 alignItems="flex-start">
-                <Grid className="set-s" xs={5}>
-                    <span className="p10 pl-25 fw-600 text-muted">All Sales Transactions</span>
+                <Grid className="set-s" item xs={12} lg={3} xl={6}>
+                    <span className="p10 fw-600 text-muted">All Sales Transactions</span>
                 </Grid>
-                <Grid className="cursor-pointer" item xs={2}>
+                <Grid className="cursor-pointer" item xs={12} lg={2} xl={2}>
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
@@ -157,18 +158,20 @@ const Home: React.FC<Props> = (props) => {
                     </div>
                 </Grid>
                 <Grid className="cursor-pointer" item 
-                style={{ width: "14rem" }}>
-                    <Card className="set-sb p7 bg-brown" style={{ width: "12rem" }}
+                // style={{ width: "14rem" }}
+                 xs={12} lg={2} xl={1}>
+                    <Card className="set-c p7 bg-brown" 
+                    // style={{ width: "12rem" }}
                     >
                         <Typography className={classes.white}>
                             Filter by:
                         </Typography>
-                        <ExpandMoreIcon className={classes.white} />
+                        <ExpandMoreIcon className={`pl-15 ${classes.white}`} />
                     </Card>
                 </Grid>
-                <Grid className="cursor-pointer" item>
-                    <Card className="set-sa p7 bg-brown" 
-                    style={{ width: "12rem" }}
+                <Grid className="cursor-pointer" item xs={12} lg={2} xl={1}>
+                    <Card className="set-c p7 bg-brown" 
+                    // style={{ width: "12rem" }}
                      onClick={() => modalOpen('Excel')}>
                         <DownloadIcon className={classes.white} />
                         <Typography className={classes.white}>
@@ -176,9 +179,9 @@ const Home: React.FC<Props> = (props) => {
                         </Typography>
                     </Card>
                 </Grid>
-                <Grid className="cursor-pointer" item>
-                    <Card className="set-sa p7 bg-brown" 
-                    style={{ width: "11rem" }} 
+                <Grid className="cursor-pointer" item xs={12} lg={2} xl={1}>
+                    <Card className="set-c p7 bg-brown" 
+                    // style={{ width: "11rem" }} 
                     onClick={() => modalOpen('PDF')}>
                         <DownloadIcon className={classes.white} />
                         <Typography className={classes.white}>
@@ -186,9 +189,9 @@ const Home: React.FC<Props> = (props) => {
                         </Typography>
                     </Card>
                 </Grid>
-                <Grid className="cursor-pointer" item>
-                    <Card className="set-sa p7 bg-brown"
-                     style={{ width: "5rem" }}
+                <Grid className="cursor-pointer" item xs={12} lg={1} xl={1}>
+                    <Card className="set-c p7 bg-brown"
+                    //  style={{ width: "10vh" }}
                       onClick={() => modalOpen('Create Here')}>
                         <AddIcon className={classes.white} />
                         <Typography className={classes.white}>
